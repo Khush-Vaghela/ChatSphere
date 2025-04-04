@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}ChatSphere{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login_signup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/user_info.css' %}">
+    <link rel="stylesheet" href="{% static 'css/room_list.css' %}">
+</head>
+<body>
+
+    <div class="user-info-container">
+        <div class="user-info-dropdown">
+            <div class="dropdown">
+                {% if user.is_authenticated %}
+                    <div class="user-name">
+                        <h6>{{ user.first_name }} {{ user.last_name }}</h6>
+                    </div>
+                    <div class="user-actions-container">
+                        <div class="user-action">
+                            <a href="{% url 'logout' %}"><h6>Log Out</h6></a>
+                        </div>
+                    </div>
+
+                {% else %}
+                    <div class="user-action">
+                        <a href="{% url 'login' %}"><h6>Log In</h6></a>
+                        <a href="{% url 'signup' %}"><h6>Sign Up</h6></a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    {% if user.is_authenticated %}
+
+    <div class="chat-container">
+        <div class="chat-header">Rooms</div>
+        <div class="chat-list">
+          
+          {% for room in rooms %}
+          <a href="{% url 'enter_room' room_code=room.code %}" class="chat-group">
+            <img src="avatar2.jpg" alt="User 1">
+            <div class="chat-info">
+              <span class="name">{{room.name}}</span>
+              <span class="last-message">Let's catch up later!</span>
+            </div>
+          </a>
+          {% endfor %}
+      
+        </div>
+      </div>
+
+    <div class="room-buttons">
+
+        <a href="{% url 'create_room' %}">
+            <button type="submit" class="rooms-btn">
+                <h3>Create a Room</h3>
+            </button>
+        </a>
+        <a href="{% url 'join_room' %}">
+            <button type="submit" class="rooms-btn">
+                <h3>Join a Room</h3>
+            </button>
+        </a>
+    </div>
+
+    {% else %}
+        {% block guest_content %}
+            <div class="container">
+                <div class="header">
+                    <h1>Welcome to ChatSphere</h1>
+                    <p>Connect with friends and family instantly with our amazing chat platform</p>
+                </div>
+                <div class="cta">
+                    <a href="accounts/signup" class="cta-button">Start Chatting Now</a>
+                </div>
+            </div>
+        {% endblock %}
+    {% endif %}
+    
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

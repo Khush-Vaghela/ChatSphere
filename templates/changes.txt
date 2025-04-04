@@ -1,0 +1,46 @@
+<div class="pre-loader">
+		<div class="pre-loader-box">
+			<div class="loader-logo">
+				<img src="{% static 'vendors/images/Kabbu.gif' %}" alt="" width="200" height="200">
+			</div>
+			<div class='loader-progress' id="progress_div">
+				<div class='bar' id='bar1'></div>
+			</div>
+			<div class='percent' id='percent1'>0%</div>
+			<div class="loading-text">
+				Loading...
+			</div>
+		</div>
+	</div>
+
+
+<div class="user-info-dropdown">
+				<div class="dropdown">
+
+					{% if user.is_authenticated %}
+					<!-- <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+						<a class="dropdown-item" href="{% static 'profile.html' %}"><i class="dw dw-user1"></i> Profile</a>
+						<a class="dropdown-item" href="{% static 'profile.html' %}"><i class="dw dw-settings2"></i> Setting</a>
+						<a class="dropdown-item" href="{% static 'faq.html' %}"><i class="dw dw-help"></i> Help</a>
+						<a class="dropdown-item" href="{% static 'test.html' %}"><i class="dw dw-logout"></i> Log Out</a>
+					</div> -->
+					<div style="display: inline-block;">
+						<h6 style="display: inline-block; margin-top: 19px">{{user.first_name}}</h6></a>
+						<h6 style="display: inline-block; margin-top: 19px">{{user.last_name}}</h6></a>
+					</div>
+
+					<div style="display: inline-block;">
+						<a href="accounts\logout"><h6 style="display: inline-block; margin-top: 19px; margin-left: 28px;">Log Out</h6></a>
+					</div>
+
+					{% else %}
+					<div style="display: inline-block;">
+						<a href="accounts\login"><h6 style="display: inline-block; margin-top: 19px; margin-right: 5px;">Log In</h6></a>
+						<a href="accounts\signup"><h6 style="display: inline-block; margin-top: 19px; margin-right: 5px;">Sign Up</h6></a>
+					</div>
+
+					{% endif %}
+					
+				</div>
+			</div>
+

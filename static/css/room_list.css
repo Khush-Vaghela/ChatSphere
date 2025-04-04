@@ -1,0 +1,86 @@
+.rooms-btn {
+    width: 75%;
+    padding: 14px;
+    background: linear-gradient(135deg, #FF69B4, #8A2BE2);
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 50px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rooms-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 132, 255, 0.4);
+}
+
+.chat-container {
+    width: 320px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .chat-header {
+    background: linear-gradient(135deg, #FF69B4, #8A2BE2); /* Pink to Purple */
+    color: white;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .chat-list {
+    padding: 10px;
+    max-height: 400px;
+    overflow-y: auto;
+    background: #FCE4EC; /* Light pink */
+  }
+  
+  .chat-group {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  }
+  
+  .chat-group:hover {
+    background: #F8BBD0; /* Soft pink hover effect */
+    transform: scale(1.02);
+  }
+  
+  .chat-group img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 12px;
+  }
+  
+  .chat-group .chat-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .chat-group .chat-info .name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #8A2BE2;
+  }
+  
+  .chat-group .chat-info .last-message {
+    font-size: 14px;
+    color: #777;
+  }
+  

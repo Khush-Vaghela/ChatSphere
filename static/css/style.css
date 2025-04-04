@@ -1,0 +1,231 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'Helvetica', 'Arial', sans-serif; */
+    font-family: cursive;
+}
+
+body {
+    background: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Messenger Container */
+.messenger-container {
+    width: 100%;
+    max-width: 900px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 85vh;
+}
+
+/* Header Section */
+.messenger-header {
+    background: linear-gradient(45deg, #007bff, #0056b3); /* Blue gradient */
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Pushes elements apart */
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-info span {
+    font-size: 1rem;
+}
+
+.logout-btn {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+}
+
+.logout-btn:hover {
+    background: #cc0000;
+}
+
+/* Messages Section */
+.messenger-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* General styling for messages */
+.messenger-messages p {
+    display: inline-block;
+    max-width: 75%;
+    word-wrap: break-word;
+    padding: 12px 16px;
+    border-radius: 18px;
+    font-size: 1rem;
+    line-height: 1.4;
+    margin: 5px;
+}
+
+/* Sent messages (align to the right) */
+.messenger-messages p.sent {
+    background: #0084ff;
+    color: #fff;
+    align-self: flex-end;
+    border-top-right-radius: 5px;
+}
+
+/* Received messages (align to the left) */
+.messenger-messages p.received {
+    background: #e6e6e6;
+    color: #1c2526;
+    align-self: flex-start;
+    border-top-left-radius: 5px;
+}
+
+/* Username headers */
+.messenger-messages h6 {
+    font-size: 0.9rem;
+    color: #606770;
+    margin: 5px 10px 2px;
+}
+
+.messenger-messages h6.sent {
+    align-self: flex-end;
+}
+
+.messenger-messages h6.received {
+    align-self: flex-start;
+}
+
+/* Input field */
+.messenger-input {
+    display: flex;
+    padding: 15px;
+    background: #fff;
+    border-top: 1px solid #e6e6e6;
+    align-items: center;
+    gap: 10px;
+}
+
+.messenger-input input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    outline: none;
+    background: #f0f0f0;
+    font-size: 1rem;
+    color: #1c2526;
+}
+
+.messenger-input button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0084ff;
+    transition: color 0.2s ease;
+}
+
+.messenger-input button:hover {
+    color: #0066cc;
+}
+
+.messenger-input button svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Scrollbar */
+.messenger-messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+.messenger-messages::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+}
+
+.messenger-messages::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .messenger-messages p {
+        max-width: 85%;
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    padding: 60px 0;
+}
+
+.header h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    color: #00d4ff;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.7);
+}
+
+.header p {
+    font-size: 1.5em;
+    color: #e0e0e0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.cta {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 40px;
+    background: #00d4ff;
+    color: #1a1a2e;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.cta-button:hover {
+    background: #00b7d9;
+    transform: scale(1.05);
+}

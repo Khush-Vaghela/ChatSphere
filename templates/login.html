@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+{% block title %}ChatSphere - Login{% endblock %}
+{% block guest_content %}
+    {# This block is intentionally left empty to remove the welcome message #}
+{% endblock %}
+{% block content %}
+    <div class="auth-container">
+        <div class="auth-box">
+            <div class="logo">
+                <h1>ChatSphere</h1>
+            </div>
+            <h2>Login</h2>
+            <form action="{% url 'login' %}" method="POST">
+                {% csrf_token %}
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="auth-btn">Log In</button>
+            </form>
+            <p>Don't have an account? <a href="{% url 'signup' %}">Sign Up</a></p>
+            <p>Back to home <a href="/">Home</a></p>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Room - DESKAPP</title>
+    <link rel="stylesheet" href="{% static 'css/create_room_join_room.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h1>DESKAPP</h1>
+            <h2>Create Room</h2>
+            <form action = "create_room" method = "POST">
+
+                {% csrf_token %}
+                <div class="input-group">
+                    <label for="room-name">Room Name</label>
+                    <input type="text" id="room-name" name = "room_name" placeholder="Enter room name" required>
+                </div>
+                <button type="submit" class="btn">Create Room</button>
+                <p><a href="/">Back to Home</a></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

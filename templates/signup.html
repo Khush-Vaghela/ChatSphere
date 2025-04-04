@@ -1,0 +1,45 @@
+{% extends 'index.html' %}
+{% block title %}ChatSphere - Sign Up{% endblock %}
+{% block guest_content %}
+    {# This block is intentionally left empty to remove the welcome message #}
+{% endblock %}
+{% block content %}
+    <div class="auth-container">
+        <div class="auth-box">
+            <div class="logo">
+                <h1>ChatSphere</h1>
+            </div>
+            <h2>Sign Up</h2>
+            <form action="{% url 'signup' %}" method="POST">
+                {% csrf_token %}
+                <div class="input-group">
+                    <label for="first_name">First Name</label>
+                    <input type="text" id="first_name" name="first_name" placeholder="Enter your first name" required>
+                </div>
+                <div class="input-group">
+                    <label for="last_name">Last Name</label>
+                    <input type="text" id="last_name" name="last_name" placeholder="Enter your last name" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Create a username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Create a password" required>
+                </div>
+                <div class="input-group">
+                    <label for="confirm_password">Confirm Password</label>
+                    <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm password" required>
+                </div>
+                <button type="submit" class="auth-btn">Sign Up</button>
+            </form>
+            <p>Already have an account? <a href="{% url 'login' %}">Log In</a></p>
+            <p>Back to home <a href="/">Home</a></p>
+        </div>
+    </div>
+{% endblock %}
